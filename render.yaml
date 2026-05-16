@@ -1,0 +1,36 @@
+services:
+  - type: web
+    name: elite-hosting-bot
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python bot.py
+    plan: free
+
+    envVars:
+      - key: BOT_TOKEN
+        sync: false          # Set manually in Render dashboard
+
+      # ── Optional overrides (remove any you don't need) ──
+      - key: TOKEN
+        sync: false
+      - key: OWNER_ID
+        sync: false
+      - key: ADMIN_ID
+        sync: false
+      - key: YOUR_USERNAME
+        sync: false
+      - key: UPDATE_CHANNEL
+        sync: false
+      - key: FREE_USER_LIMIT
+        value: "2"
+      - key: SUBSCRIBED_USER_LIMIT
+        value: "10"
+      - key: ADMIN_LIMIT
+        value: "999"
+      - key: PORT
+        value: "8080"
+
+    disk:
+      name: bot-data
+      mountPath: /opt/render/project/src/inf
+      sizeGB: 1
