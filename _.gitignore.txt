@@ -1,0 +1,20 @@
+# Secrets – never commit these
+.env
+
+# Bot runtime data
+inf/
+upload_bots/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# OS junk
+.DS_Store
+Thumbs.db
